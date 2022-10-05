@@ -2,8 +2,6 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.Random;
 
 public class CardGame {
     private final String[] suit = {"\u2665","\u2663","\u2666","\u2660"};
@@ -17,7 +15,6 @@ public class CardGame {
             for (int i = 0; i < 13; i++) {
                 deckOfCards.add(new Card(suit, symbol[i], value[i]));
             }
-
         }
         System.out.println(deckOfCards);
         System.out.println(deckOfCards.size());
