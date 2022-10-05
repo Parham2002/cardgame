@@ -3,6 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Random;
 
 public class CardGame {
     private final String[] suit = {"\u2665","\u2663","\u2666","\u2660"};
@@ -19,6 +20,7 @@ public class CardGame {
 
         }
         System.out.println(deckOfCards);
+        System.out.println(deckOfCards.size());
     }
 
 
@@ -37,11 +39,12 @@ public class CardGame {
     }
 
     public void sortDeckInSuitOrder() {
-        Comparator.comparing()
+        Collections.sort(deckOfCards, new SortBySuit());
     }
 
     public ArrayList<Card> shuffleDeck() {
-        return null;
+        Collections.shuffle(deckOfCards);
+        return deckOfCards;
     }
 
 

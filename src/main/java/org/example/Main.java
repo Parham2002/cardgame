@@ -6,5 +6,11 @@ public class Main {
         game.generateCard();
         game.sortDeckInNumberOrder();
         game.getDeck();
+        System.out.println("------------");
+        game.sortDeckInSuitOrder();
+        game.getDeck();
+        System.out.println("------------");
+        game.shuffleDeck();
+        game.getDeck();
     }
 }
