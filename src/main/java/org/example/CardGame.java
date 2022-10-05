@@ -31,7 +31,15 @@ public class CardGame {
     }
 
     public Card dealCard() {
-        return deckOfCards.get(0);
+        Card card = null;
+        if (deckOfCards.size() > 0) {
+            card = deckOfCards.get(0);
+            deckOfCards.remove(0);
+        }
+        System.out.println(deckOfCards.size());
+        System.out.println(deckOfCards.get(0));
+        return card;
+
     }
 
     public void sortDeckInNumberOrder() {

@@ -12,5 +12,7 @@ public class Main {
         System.out.println("------------");
         game.shuffleDeck();
         game.getDeck();
+        System.out.println("------------");
+        System.out.println(game.dealCard());
     }
 }
