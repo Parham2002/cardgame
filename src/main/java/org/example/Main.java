@@ -2,6 +2,9 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-
+        CardGame game = new CardGame();
+        game.generateCard();
+        game.sortDeckInNumberOrder();
+        game.getDeck();
     }
 }

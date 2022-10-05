@@ -1,25 +1,42 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
-public class Card {
-    private final String[] suit = {"U+2665","U+2663","U+2666","U+2660"};
-    private final String[] symbol = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
-    private final int[] value = {2,3,4,5,6,7,8,9,10,11,12,13,14};
+public class Card implements Comparable<Card> {
+    private String suit;
+    private String symbol;
+    private int value;
 
-    public Card dealCard() {
-        return null;
+    public Card(String suit, String symbol, int value) {
+        this.suit = suit;
+        this.symbol = symbol;
+        this.value = value;
     }
 
-    public ArrayList<Card> sortDeckInNumberOrder() {
-        return null;
+    public String getSuit() {
+        return suit;
     }
 
-    public ArrayList<Card> shuffleDeck() {
-        return null;
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public int getValue() {
+        return value;
     }
 
     @Override
+    public int compareTo(Card o) {
+        if (this.value < o.value) {
+            return -1;
+        }
+        if (this.value > o.value) {
+            return 1;
+        }
+        return 0;
+    }
+
     public String toString() {
         return "Card{" +
                 "suit='" + suit + '\'' +
