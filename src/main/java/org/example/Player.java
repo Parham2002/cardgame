@@ -3,11 +3,21 @@ package org.example;
 import java.util.ArrayList;
 
 public class Player {
-    private int playerNumber;
+
+    private int playerId;
     private ArrayList<Card> playerDeck = new ArrayList<>();
 
-    public Player(int playerNumber) {
-        this.playerNumber = playerNumber;
+
+    public Player(int playerId) {
+        this.playerId = playerId;
+    }
+    public static ArrayList<Player> createPlayer(int numberOfPlayers) {
+        ArrayList<Player> playerList = new ArrayList<>();
+        for (int i = 0; i < numberOfPlayers; i++) {
+            Player player = new Player(i);
+            playerList.add(player);
+        }
+        return playerList;
     }
 
     public ArrayList<Card> addToPlayerDeck(Card card) {
@@ -25,11 +35,13 @@ public class Player {
         return false;
     }
 
-    public int getPlayerNumber() {
-        return playerNumber;
-    }
+
 
     public ArrayList<Card> getPlayerDeck() {
         return playerDeck;
+    }
+
+    public int getPlayerId() {
+        return playerId;
     }
 }
