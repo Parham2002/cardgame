@@ -7,7 +7,8 @@ public class CardGame {
     private final String[] suit = {"\u2665","\u2663","\u2666","\u2660"};
     private final String[] symbol = {"2","3","4","5","6","7","8","9","10","J","Q","K","A"};
     private final int[] value = {2,3,4,5,6,7,8,9,10,11,12,13,14};
-    ArrayList<Card> deckOfCards = new ArrayList<>();
+    private ArrayList<Card> deckOfCards = new ArrayList<>();
+
 
     public void generateCard() {
 
@@ -47,6 +48,11 @@ public class CardGame {
         Collections.shuffle(deckOfCards);
         return deckOfCards;
     }
+
+    public ArrayList<Card> getDeckOfCards() {
+        return deckOfCards;
+    }
+
 
 
 }

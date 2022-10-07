@@ -15,6 +15,16 @@ public class Player {
         return playerDeck;
     }
 
+    public boolean hasWon() {
+        for (int i = 1; i < playerDeck.size(); i++) {
+            if (playerDeck.get(i).getSymbol().equals(playerDeck.get(i-1).getSymbol())) {
+                System.out.println("SNAP! You've won!!");
+                return true;
+            }
+        }
+        return false;
+    }
+
     public int getPlayerNumber() {
         return playerNumber;
     }

@@ -5,4 +5,5 @@ public class Main {
         Snap snapGame = new Snap();
         snapGame.snapGame();
     }
+
 }

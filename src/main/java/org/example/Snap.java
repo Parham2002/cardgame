@@ -13,10 +13,13 @@ public class Snap extends CardGame{
         scanner.nextLine();
         cardGame.generateCard();
         cardGame.shuffleDeck();
-        while (cardGame.deckOfCards.size() > 0) {
+        while (cardGame.getDeckOfCards().size() > 0) {
             System.out.println("It's your turn!");
             playerOne.addToPlayerDeck(cardGame.dealCard());
             System.out.println("Your deck contains: " + playerOne.getPlayerDeck());
+            if (playerOne.hasWon()) {
+                break;
+            }
             System.out.println("Press enter to take another card and end your turn");
             scanner.nextLine();
 
