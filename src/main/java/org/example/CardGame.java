@@ -16,8 +16,6 @@ public class CardGame {
                 deckOfCards.add(new Card(suit, symbol[i], value[i]));
             }
         }
-        System.out.println(deckOfCards);
-        System.out.println(deckOfCards.size());
     }
 
 
@@ -33,8 +31,6 @@ public class CardGame {
             card = deckOfCards.get(0);
             deckOfCards.remove(0);
         }
-        System.out.println(deckOfCards.size());
-        System.out.println(deckOfCards.get(0));
         return card;
 
     }
