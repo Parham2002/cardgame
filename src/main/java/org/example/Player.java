@@ -3,45 +3,26 @@ package org.example;
 import java.util.ArrayList;
 
 public class Player {
+    public int playerId;
+    private String playerName;
 
-    private int playerId;
-    private ArrayList<Card> playerDeck = new ArrayList<>();
-
-
-    public Player(int playerId) {
-        this.playerId = playerId;
-    }
-    public static ArrayList<Player> createPlayer(int numberOfPlayers) {
-        ArrayList<Player> playerList = new ArrayList<>();
-        for (int i = 0; i < numberOfPlayers; i++) {
-            Player player = new Player(i);
-            playerList.add(player);
-        }
-        return playerList;
+    public Player(String playerName, int playerId) {
+        this.playerName = playerName;
     }
 
-    public ArrayList<Card> addToPlayerDeck(Card card) {
-        playerDeck.add(card);
-        return playerDeck;
+    public String getPlayerName() {
+        return playerName;
     }
 
-    public boolean hasWon() {
-        for (int i = 1; i < playerDeck.size(); i++) {
-            if (playerDeck.get(i).getSymbol().equals(playerDeck.get(i-1).getSymbol())) {
-                System.out.println("SNAP! You've won!!");
-                return true;
-            }
-        }
-        return false;
-    }
-
-
-
-    public ArrayList<Card> getPlayerDeck() {
-        return playerDeck;
+    public void setPlayerName(String playerName) {
+        this.playerName = playerName;
     }
 
     public int getPlayerId() {
         return playerId;
+    }
+
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
     }
 }
