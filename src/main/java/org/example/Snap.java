@@ -2,9 +2,11 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Snap extends CardGame{
     Random random = new Random();
+    Scanner scanner = new Scanner(System.in);
     private ArrayList<Card> cardsOnTable = new ArrayList<>();
     Player playerOne = new Player("Parham", 1);
     Player playerTwo = new Player("Josie", 2);
@@ -30,14 +32,25 @@ public class Snap extends CardGame{
         }
     }
 
-    public boolean hasWon() {
+    public boolean canSnap() {
         for (int i = 1; i < cardsOnTable.size(); i++) {
-            if (cardsOnTable.get(i).getSymbol().equals(cardsOnTable.get(i-1).getSymbol())) {
-                System.out.println("SNAP! You've won!!");
+            if (cardsOnTable.get(i).getSymbol().equals(cardsOnTable.get(i - 1).getSymbol())) {
                 return true;
             }
         }
         return false;
+    }
+
+    public boolean snap() {
+            System.out.println("Snap?");
+            if (scanner.nextLine().equalsIgnoreCase("snap")) {
+                return true;
+            }
+            return false;
+   }
+
+    public void hasWon(String playerName) {
+        System.out.println(playerName + " wins!!!");
     }
 
     public ArrayList<Card> getCardsOnTable() {
