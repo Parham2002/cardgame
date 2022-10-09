@@ -22,6 +22,8 @@ public class Main {
 
             System.out.println("Press enter to take another card and end your turn");
             scanner.nextLine();
+            playerTurn = snapGame.switchTurns(playerTurn);
+            System.out.println(snapGame.listOfPlayers[playerTurn].getPlayerName() + "'s turn.");
 
         }
     }

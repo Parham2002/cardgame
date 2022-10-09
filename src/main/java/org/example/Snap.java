@@ -11,7 +11,16 @@ public class Snap extends CardGame{
     Player[] listOfPlayers = {playerOne, playerTwo};
 
     public int randomFirstTurn(int numberOfPlayers) {
-        return random.nextInt(numberOfPlayers)+1;
+        return random.nextInt(numberOfPlayers);
+    }
+
+    public int switchTurns(int playerTurn) {
+        if (playerTurn == 0) {
+            playerTurn = 1;
+        } else {
+            playerTurn = 0;
+        }
+        return playerTurn;
     }
 
     public void addToCardsOnTable(Card card) {
