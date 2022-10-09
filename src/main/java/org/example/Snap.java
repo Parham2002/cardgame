@@ -1,12 +1,21 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class Snap extends CardGame{
     Random random = new Random();
     Scanner scanner = new Scanner(System.in);
+
+//    private int time = 3;
+//    Timer timer = new Timer();
+//    TimerTask toDo = new TimerTask() {
+//        public void run() {
+//            if (time > 0) {
+//                System.out.println(time);
+//                time--;
+//            }
+//        }
+//    };
     private ArrayList<Card> cardsOnTable = new ArrayList<>();
     Player playerOne = new Player("Parham", 1);
     Player playerTwo = new Player("Josie", 2);
@@ -42,15 +51,28 @@ public class Snap extends CardGame{
     }
 
     public boolean snap() {
-            System.out.println("Snap?");
+            System.out.println("Type 'SNAP' now! You have 3 seconds!");
+            long startTime = System.currentTimeMillis();
             if (scanner.nextLine().equalsIgnoreCase("snap")) {
-                return true;
+                if (System.currentTimeMillis() - startTime < 3000) {
+                    return true;
+                } else {
+                    System.out.println("You took too long...");
+                    return false;
+                }
+            } else {
+                System.out.println("Wrong input.");
             }
             return false;
    }
 
-    public void hasWon(String playerName) {
-        System.out.println(playerName + " wins!!!");
+    public void hasWon(String playerName, boolean win) {
+        if (win) {
+            System.out.println(playerName + " wins!!!");
+        } else {
+            System.out.println(playerName + " has failed.");
+        }
+
     }
 
     public ArrayList<Card> getCardsOnTable() {

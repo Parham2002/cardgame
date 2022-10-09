@@ -21,19 +21,21 @@ public class Main {
             System.out.println(snapGame.getCardsOnTable());
             if (snapGame.canSnap()) {
                 if (snapGame.snap()) {
-                    snapGame.hasWon(snapGame.listOfPlayers[playerTurn].getPlayerName());
+                    snapGame.hasWon(snapGame.listOfPlayers[playerTurn].getPlayerName(), true);
                     break;
                 } else {
-                    System.out.println(snapGame.listOfPlayers[playerTurn].getPlayerName() + " has failed.");
+                    snapGame.hasWon(snapGame.listOfPlayers[playerTurn].getPlayerName(), false);
                     break;
                 }
             }
+            System.out.println();
             System.out.println("Press enter to take another card and end your turn");
             scanner.nextLine();
             playerTurn = snapGame.switchTurns(playerTurn);
             System.out.println(snapGame.listOfPlayers[playerTurn].getPlayerName() + "'s turn.");
 
         }
+
     }
 
 }
