@@ -35,7 +35,9 @@ public class Main {
             System.out.println(snapGame.listOfPlayers[playerTurn].getPlayerName() + "'s turn.");
 
         }
-
+        if (cardGame.getDeckOfCards().size() == 0) {
+            System.out.println("Ran out of cards.");
+        }
     }
 
 }
